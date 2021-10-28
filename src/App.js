@@ -1,9 +1,16 @@
 import Home from './components/Home/Home';
+import MovieInfo from './components/MovieInfo/MovieInfo';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './index.css';
 
 function App() {
   return (
-    <Home></Home>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+        <Route path="/:id" component={MovieInfo}></Route>
+      </Switch>
+    </Router>
   )
 }
 

@@ -1,0 +1,14 @@
+.header-wrapper{
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+   margin: 0px auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.movieDB-logo{
+    width: 130px;
+    height: 50px;
+}
