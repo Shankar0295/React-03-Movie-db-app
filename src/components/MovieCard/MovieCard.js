@@ -4,6 +4,7 @@ import './MovieCard.css'
 import { Link } from 'react-router-dom';
 
 const MovieCard = ({ movieDetails }) => {
+
     return (
         <div className="movieCard-wrapper">
             <h1 className="cardName">Top Rated Movies</h1>

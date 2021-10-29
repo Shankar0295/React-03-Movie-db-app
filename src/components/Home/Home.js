@@ -3,13 +3,15 @@ import { API_URL, API_KEY, } from '../../config';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import MovieCard from '../MovieCard/MovieCard';
+import LoadMoreButton from '../LoadMoreButton/LoadMoreButton'
 
 const Home = () => {
-    const [movie, setMovie] = useState([])
+    const [movie, setMovie] = useState([]);
+    const [count, setCount] = useState(1);
+
     const fetchMovieURl = async () => {
         try {
-            const response = await fetch(`${API_URL}movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`)
-            // const response = await fetch('https://image.tmdb.org/t/p/w1280/5hNcsnMkwU2LknLoru73c76el3z.jpg')
+            const response = await fetch(`${API_URL}movie/top_rated?api_key=${API_KEY}&language=en-US&page=${count}`)
             const data = await response.json()
             setMovie(data.results)
             console.log(data.results)
@@ -20,11 +22,18 @@ const Home = () => {
 
     useEffect(() => {
         fetchMovieURl()
-    }, [])
+    }, [count])
+
+    const loadMore = () => {
+        setCount(count + 1)
+        console.log(count, "count")
+    }
+
     return (
         <div>
             <Header />
             <MovieCard movieDetails={movie} />
+            <LoadMoreButton onClick={loadMore} />
             <Footer />
         </div>
     )

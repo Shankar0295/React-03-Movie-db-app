@@ -1,0 +1,15 @@
+.button-wrapper{
+    width: 90%;
+    margin: 0px auto;
+}
+.loadmore{
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+}
