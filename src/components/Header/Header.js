@@ -4,7 +4,7 @@ import './Header.css'
 const Header = () => {
     return (
         <div className="header-wrapper">
-            <h1>Show Time</h1>
+            <h1>MOVIEFLIX</h1>
             <img className="movieDB-logo" src={Logo} alt="movieDB logo" />
         </div>
     )

@@ -4,36 +4,52 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import MovieCard from '../MovieCard/MovieCard';
 import LoadMoreButton from '../LoadMoreButton/LoadMoreButton'
+import Loading from '../Loading/Loading'
 
 const Home = () => {
     const [movie, setMovie] = useState([]);
     const [count, setCount] = useState(1);
-
-    const fetchMovieURl = async () => {
-        try {
-            const response = await fetch(`${API_URL}movie/top_rated?api_key=${API_KEY}&language=en-US&page=${count}`)
-            const data = await response.json()
-            setMovie(data.results)
-            console.log(data.results)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    const [loading, setLoading] = useState(false);
+    const [totalPage, setTotalPage] = useState(0);
 
     useEffect(() => {
-        fetchMovieURl()
+        const fetchMovieURl = async () => {
+            setLoading(true)
+            try {
+                const response = await fetch(`${API_URL}movie/top_rated?api_key=${API_KEY}&language=en-US&page=${count}`)
+                const data = await response.json()
+                setMovie((movie) => [...movie, ...data.results])
+                setTotalPage(data.total_pages)
+                setLoading(false)
+            } catch (error) {
+                setLoading(false)
+                console.log(error)
+
+            }
+        }
+
+        fetchMovieURl();
+
     }, [count])
 
+
     const loadMore = () => {
-        setCount(count + 1)
-        console.log(count, "count")
+        setCount((count) => count + 1)
+    }
+
+
+
+    if (loading) {
+        return (
+            <Loading />
+        )
     }
 
     return (
         <div>
             <Header />
             <MovieCard movieDetails={movie} />
-            <LoadMoreButton onClick={loadMore} />
+            {count <= totalPage ? <LoadMoreButton onClick={loadMore} /> : null}
             <Footer />
         </div>
     )
