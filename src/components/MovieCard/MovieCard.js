@@ -3,12 +3,12 @@ import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 import './MovieCard.css'
 import { Link } from 'react-router-dom';
 
-const MovieCard = ({ movieDetails }) => {
+const MovieCard = ({ movieDetails, visible }) => {
     console.log(movieDetails, "details")
     return (
         <div className="movieCard-wrapper">
             <h1 className="cardName">Top Rated Movies</h1>
-            <div className="movieCard">{movieDetails.map((items, i) => {
+            <div className="movieCard">{movieDetails.slice(0, visible).map((items, i) => {
                 return (
                     <div className="moviePosterWrapper" key={i}>
                         <Link to={`${items.id}`} className="movieLink">

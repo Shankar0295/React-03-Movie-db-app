@@ -11,6 +11,8 @@ const Home = () => {
     const [count, setCount] = useState(1);
     const [loading, setLoading] = useState(false);
     const [totalPage, setTotalPage] = useState(0);
+    const [visible, setVisible] = useState(20);
+    console.log(visible)
 
     useEffect(() => {
         const fetchMovieURl = async () => {
@@ -35,6 +37,7 @@ const Home = () => {
 
     const loadMore = () => {
         setCount((count) => count + 1)
+        setVisible((visible) => visible + movie.length)
     }
 
 
@@ -48,7 +51,7 @@ const Home = () => {
     return (
         <div>
             <Header />
-            <MovieCard movieDetails={movie} />
+            <MovieCard movieDetails={movie} visible={visible} />
             {count <= totalPage ? <LoadMoreButton onClick={loadMore} /> : null}
             <Footer />
         </div>
