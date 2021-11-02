@@ -2,6 +2,11 @@
    display: flex
 }
 
+h2{
+    margin-bottom: 10px;
+    
+}
+
 
 .movieInfo-backdrop{
     background-size: cover!important;
@@ -15,11 +20,11 @@
 .movieInfo-poster{
     padding-right: 30px;
     width: 250px;
-    height: 350px;
+    /* height: 350px; */
 }
 
 .movieInfo-section{
-    background: rgba(0,0,0,.7);
+    background: rgba(0,0,0,.8);
     padding: 20px 30px;
     border-radius: 20px;
     display: flex;
@@ -36,7 +41,7 @@
 }
 
 .movieInfo-votePadding{
-    border: 1px solid;
+    border: 1px solid transparent;
     padding: 2px;
 }
 
@@ -44,21 +49,26 @@
     padding-right: 10px;
 }
 .movieInfo-votePadding.green{
-    color: green
+    background-color: green;
+    font-weight: bolder;
 }
 
 .movieInfo-votePadding.orange{
-    color: orange
+    background-color: orange;
+    font-weight: bolder;
 }
 
 .movieInfo-votePadding.red{
-    color: red
+    background-color: red;
+    font-weight: bolder;
 }
 .movieInfo-tagline{
     font-style: italic;
 }
 .movieInfo-overview{
     text-align: justify;
+    font-weight: 500;
+
 }
 .movieInfo-homebtn{
     width: 90%;

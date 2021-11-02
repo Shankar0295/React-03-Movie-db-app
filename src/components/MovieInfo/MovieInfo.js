@@ -4,6 +4,7 @@ import './MovieInfo.css'
 import { Link } from 'react-router-dom'
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import MovieProviders from '../MovieProviders/MovieProviders';
 
 const MovieInfo = (props) => {
     const movieInfo = props.match.params.id
@@ -16,13 +17,9 @@ const MovieInfo = (props) => {
             // setLoading(true)
             try {
                 const response = await fetch(`${API_URL}movie/${movieInfo}?api_key=${API_KEY}&language=IN&append_to_response=credits,watch/providers`)
-                // const castApi = await fetch(`${API_URL}movie/${movieInfo}/credits?api_key=${API_KEY}&language=en-US`)
                 const data = await response.json()
-                // const castData = await castApi.json()
                 setMovieDetails([data])
-                // setCastDetails([castData])
                 console.log([data])
-                // console.log([castData], "casy")
                 // setLoading(false)
             } catch (error) {
                 // setLoading(false)
@@ -97,19 +94,16 @@ const MovieInfo = (props) => {
                                 <div>
                                     <h2>{Director().length > 1 ? 'DIRECTOR\'S' : 'DIRECTOR'}</h2>
                                     <div>{Director().map((item, index) => {
-                                        return (<span key={item.id}>{(index ? ', ' : '') + item.name}</span>)
+                                        return (<span style={{ fontWeight: 500 }} key={item.id}>{(index ? ', ' : '') + item.name}</span>)
                                     })}</div>
                                 </div>
                             </div>
                         </section>
                     </div>
-
-
-
                 )
             })}
-
             </div>
+            <MovieProviders watchproviders={movieDetails.map((item) => { return (item["watch/providers"]) })} />
             <Footer />
         </div>
 
