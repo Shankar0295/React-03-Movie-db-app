@@ -7,21 +7,56 @@
 
 .movieCard{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-gap: 30px;
 }
 
 .moviePoster{
-width: 90%;
-height: 90%;
+width: 100%;
+height: 250px;
 /* max-width: 100%;
     max-height: 100%; */
 }
 
 .moviePosterWrapper{
     text-align: center;
+    border: 1px solid #000000;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
+    background-color : #ffffff;
 }
 .cardName{
-    text-align: center;
-    margin-bottom: 60px;
+    /* text-align: center; */
+    margin-bottom: 50px;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+.card-text{
+    font-weight: bolder;
+    color: #000000;
+    padding: 0px 10px;
+}
+
+.card-text:hover{
+    color: #01b4e4
+}
+
+.wrapper-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-text.green{
+    color: green
+}
+
+.card-text.orange{
+    color: orange
+}
+
+.card-text.red{
+    color: red
 }
