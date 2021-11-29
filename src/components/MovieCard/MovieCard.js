@@ -3,8 +3,8 @@ import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 import './MovieCard.css'
 import { Link } from 'react-router-dom';
 
-const MovieCard = ({ movieDetails }) => {
-
+const MovieCard = ({ movieDetails, searchTerm }) => {
+    console.log(searchTerm, "searchTerm")
     const setVoteClass = (vote) => {
         if (vote >= 8) {
             return "green"
@@ -17,7 +17,7 @@ const MovieCard = ({ movieDetails }) => {
     console.log(movieDetails, "details")
     return (
         <div className="movieCard-wrapper">
-            <h1 className="cardName">Top Rated Movies</h1>
+            {searchTerm ? <h1 className="cardName">Search Results</h1> : <h1 className="cardName">Top Rated Movies</h1>}
             <div className="movieCard">{movieDetails.map((items, i) => {
                 return (
                     <div className="moviePosterWrapper" key={i}>

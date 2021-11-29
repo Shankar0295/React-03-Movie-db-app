@@ -1,47 +1,41 @@
 import React from 'react';
 import './MovieProviders.css'
+import { IMAGE_BASE_URL, ICON_SIZE } from '../../config';
 
 const MovieProviders = ({ watchproviders }) => {
     console.log(watchproviders)
-
+    let flatrate = []
 
     const Providers = () => {
-        let buyArray = []
-        let rentArray = []
-        let flatrate = []
         for (let key in watchproviders) {
             let obj = watchproviders[key].results.IN
-            if (obj.hasOwnProperty("buy")) {
-                buyArray.push(obj.buy)
-                console.log(buyArray, "dafadsf")
-            } if (obj.hasOwnProperty("rent")) {
-                rentArray.push(obj.rent)
-                console.log(rentArray, "dafadsf")
-            } if (obj.hasOwnProperty("flatrate")) {
-                flatrate.push(obj.flatrate)
-                console.log(flatrate, "dafadsf")
+            if (obj !== undefined) {
+                if (obj.hasOwnProperty("flatrate")) {
+                    flatrate.push(obj.flatrate)
+                    console.log(flatrate, "dafadsf")
+                }
             }
 
         }
     }
 
-    console.log(Providers(), "arr")
+    console.log(Providers())
+
 
     return (
-        <div>
-            <h2>OTT/Providers</h2>
-            <div>
-                <h2>Now Streaming</h2>
-                {/* <ul>{Providers().map((item) => {
-                    return item.flatrate.map((flat, index) => {
-                        return (<li key={index}>{flat.provider_name}</li>)
-                    })
-                })}
-                </ul> */}
-            </div>
-            <h2>Rent this Movie on</h2>
-            <h2>Buy this Movie on</h2>
+
+        <div className="providers-img">{flatrate.map((item) => {
+            return item.map((item) => {
+                return (
+                    <div key={item.provider_id}>
+                        <img style={{ height: "40px" }} src={`${IMAGE_BASE_URL}${ICON_SIZE}/${item.logo_path}`} alt="actor" />
+                    </div>
+                )
+            })
+
+        })}
         </div>
+
     )
 }
 

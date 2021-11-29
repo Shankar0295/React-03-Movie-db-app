@@ -16,12 +16,9 @@ const Home = () => {
     const [loading, setLoading] = useState(false);
     const [totalPage, setTotalPage] = useState(0);
     const [searchTerm, setSearchTerm] = useState('')
-    console.log(count, "count")
-
-
 
     const getMovies = async (API) => {
-        setLoading(true)
+        // setLoading(true)
         try {
             const response = await fetch(API)
             const data = await response.json()
@@ -35,8 +32,13 @@ const Home = () => {
     }
 
     useEffect(() => {
-        getMovies(MOVIEAPI + count)
-    }, [count])
+        if (searchTerm !== '') {
+            getMovies(SEARCHAPI + searchTerm + '&page=' + count)
+        } else {
+            getMovies(MOVIEAPI + count)
+        }
+
+    }, [count, searchTerm])
 
 
     const loadMore = () => {
@@ -44,20 +46,13 @@ const Home = () => {
         console.log(count, "loadmore")
     }
 
-    const searchMovie = async (e) => {
-        e.preventDefault()
+    const searchMovie = (e) => {
         setSearchTerm(e.target.value)
-        if (searchTerm.length > 2) {
+        if (searchTerm !== '') {
             setMovie([])
             setCount(1)
-            getMovies(SEARCHAPI + searchTerm)
-        } else {
-            getMovies(MOVIEAPI + count)
         }
-
     }
-
-
 
     if (loading) {
         return (
@@ -69,8 +64,8 @@ const Home = () => {
         <div>
             <Header />
             <SearchBar onChange={searchMovie} value={searchTerm} />
-            <MovieCard movieDetails={movie} />
-            {count <= totalPage && !loading ? <LoadMoreButton onClick={loadMore} /> : null}
+            <MovieCard movieDetails={movie} searchTerm={searchTerm} />
+            {count < totalPage && !loading ? <LoadMoreButton onClick={loadMore} /> : null}
             <Footer />
         </div>
     )

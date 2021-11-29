@@ -1,0 +1,6 @@
+.providers-img{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-right: 10px;
+}

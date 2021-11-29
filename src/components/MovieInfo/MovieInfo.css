@@ -1,5 +1,6 @@
 .movieInfo-container{
-   display: flex
+   display: flex;
+   margin-bottom: 20px;
 }
 
 h2{
@@ -77,5 +78,15 @@ h2{
     margin-right: auto;
     color: #ffffff;
     text-decoration: underline;
+}
+
+.movieInfo-details{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+.budget{
+    margin-right: 15px;
 }
 
