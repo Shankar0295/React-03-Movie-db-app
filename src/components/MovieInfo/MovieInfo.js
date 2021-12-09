@@ -86,12 +86,12 @@ const MovieInfo = (props) => {
             <Link to="/"><h4 className="movieInfo-homebtn">Back to Home</h4></Link>
             <div className="movieInfo-container">{movieDetails.map((item) => {
                 return (
-                    <div key={item.id} className="movieInfo-backdrop" style={{ background: `url(${IMAGE_BASE_URL}${BACKDROP_SIZE}/${item.backdrop_path})` }}>
+                    <div key={item.id} className="movieInfo-backdrop">
                         <section className="movieInfo-section">
                             <img className="movieInfo-poster" src={`${IMAGE_BASE_URL}${POSTER_SIZE}/${item.poster_path}`} alt="thumbnail" />
                             <div>
                                 <div>
-                                    <h2 className="h2-margin">{item.title}({new Date(item.release_date).toLocaleDateString()})</h2>
+                                    <h2 className="h2-margin movie-title">{item.title}({new Date(item.release_date).toLocaleDateString()})</h2>
                                 </div>
                                 <div className="movieInfo-secondContainer">
                                     <p className="movieInfo-vote">
@@ -100,28 +100,28 @@ const MovieInfo = (props) => {
                                     <span className="movieInfo-genres">{minutesToHours(item.runtime)}</span>
                                 </div>
                                 <section>
-                                    <div className="movieInfo-tagline"><h3 className="h3-margin">{item.tagline}</h3></div>
                                     <div>
-                                        <h2 className="h2-margin">OVERVIEW</h2>
+                                        <h2 className="h2-margin movieInfo-overview_title">OVERVIEW</h2>
+                                        <div className="movieInfo-tagline"><h3 className="h3-margin">{item.tagline}</h3></div>
                                         <p className="movieInfo-overview">{item.overview}</p>
                                     </div>
                                 </section>
                                 <div className="movieInfo-details">
                                     {item.budget > 0 ? <div className="budget">
-                                        <h2 className="h2-margin">Budget</h2>
-                                        <h3 className="h3-margin">{convertMoney(item.budget)}</h3>
+                                        <h2 className="h2-margin revenue">Budget</h2>
+                                        <h3 className="h3-margin revenue">{convertMoney(item.budget)}</h3>
                                     </div> : null}
                                     {item.revenue > 0 ? <div className="budget">
-                                        <h2 className="h2-margin">Revenue</h2>
-                                        <h3 className="h3-margin">{convertMoney(item.revenue)}</h3>
+                                        <h2 className="h2-margin revenue">Revenue</h2>
+                                        <h3 className="h3-margin revenue">{convertMoney(item.revenue)}</h3>
                                     </div> : null}
                                     <div>
-                                        <h2 className="h2-margin">Streaming On</h2>
+                                        <h2 className="h2-margin streaming">Streaming On</h2>
                                         <span><MovieProviders watchproviders={movieDetails.map((item) => { return (item["watch/providers"]) })} /></span>
                                     </div>
                                 </div>
                                 <div>
-                                    <h2 className="h2-margin">{Director().length > 1 ? 'DIRECTOR\'S' : 'DIRECTOR'}</h2>
+                                    <h2 className="h2-margin director">{Director().length > 1 ? 'DIRECTOR\'S' : 'DIRECTOR'}</h2>
                                     <div className="director-margin">{Director().map((item, index) => {
                                         return (<span style={{ fontWeight: 500 }} key={item.id}>{(index ? ', ' : '') + item.name}</span>)
                                     })}</div>

@@ -1,15 +1,20 @@
 .button-wrapper{
     width: 90%;
     margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .loadmore{
-    width: 100%;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #01b4e4;
-    color: #ffffff;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    cursor: pointer;
+    width: 20%;
+padding: 20px;
+font-size: 20px;
+font-weight: 400;
+background-color: #2a79b0;
+color: #fff;
+border: 1px solid transparent;
+border-radius: 10px;
+cursor: pointer;
+margin-bottom: 30px;
 }

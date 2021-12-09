@@ -6,7 +6,7 @@ const SearchBar = (props) => {
 
     return (
         <div className="search-wrapper">
-            <input type="text" placeholder="Search a Movie" onChange={props.onChange} value={props.value} className="search-input"></input>
+            <input type="text" placeholder="Search a movie" onChange={props.onChange} value={props.value} className="search-input"></input>
         </div>
     )
 }

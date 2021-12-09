@@ -8,6 +8,9 @@
     margin-bottom: 10px;
 }
 
+.movie-title{
+    font-size: 22px;
+}
 
 .movieInfo-backdrop{
     background-size: cover!important;
@@ -21,11 +24,11 @@
 .movieInfo-poster{
     padding-right: 30px;
     width: 250px;
-    /* height: 350px; */
+    height: 370px;
 }
 
 .movieInfo-section{
-    background: rgba(0,0,0,.9);
+    background: rgba(128, 128, 128,0.2);
     padding: 20px 30px;
     border-radius: 20px;
     display: flex;
@@ -35,6 +38,7 @@
 .movieInfo-secondContainer{
     display: flex;
     flex-direction: row;
+    font-size: 14px;
 }
 .movieInfo-vote{
     margin: 0px;
@@ -68,13 +72,24 @@
 }
 .movieInfo-tagline{
     font-style: italic;
+    font-size: 12px;
+font-weight: 300;
 }
 .movieInfo-overview{
     text-align: justify;
-    font-weight: 500;
+    font-weight: 400;
     margin-top: 12px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-right: 120px;
 
+}
+
+.movieInfo-overview_title{
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
 }
 .movieInfo-homebtn{
     width: 90%;
@@ -93,7 +108,17 @@
 
 .budget{
     margin-right: 15px;
+   
 }
+.revenue{
+    font-size: 16px;
+    font-weight: bold;
+}
+.streaming, .director{
+    font-size: 16px;
+    font-weight: bold;
+}
+
 
 .director-margin{
     margin-bottom: 12px;

@@ -12,7 +12,7 @@
 }
 
 .moviePoster{
-width: 100%;
+width: 90%;
 height: 90%;
 transition: transform .2s;
 border-radius: 10px;
@@ -30,10 +30,12 @@ border-radius: 10px;
     box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
     background-color : #ffffff; */
 }
-/* .cardName{
-    text-align: center;
-    margin-bottom: 50px;
-} */
+.cardName{
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
 
 a:link{
     text-decoration: none;
