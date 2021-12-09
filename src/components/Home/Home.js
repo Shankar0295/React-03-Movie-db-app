@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { API_URL, API_KEY, } from '../../config';
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import MovieCard from '../MovieCard/MovieCard';
 import LoadMoreButton from '../LoadMoreButton/LoadMoreButton'
 import Loading from '../Loading/Loading'
@@ -66,7 +65,7 @@ const Home = () => {
             <SearchBar onChange={searchMovie} value={searchTerm} />
             <MovieCard movieDetails={movie} searchTerm={searchTerm} />
             {count < totalPage && !loading ? <LoadMoreButton onClick={loadMore} /> : null}
-            <Footer />
+
         </div>
     )
 }

@@ -1,11 +1,10 @@
 import React from 'react';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 import NoImage from '../../images/no_image.jpeg'
+import Footer from '../Footer/Footer';
 import './CastCrew.css'
 
 const CastCrew = ({ credits }) => {
-    console.log(credits)
-
     return (
         <div className="cast-container">
             <h1>Cast</h1>
@@ -21,7 +20,7 @@ const CastCrew = ({ credits }) => {
                                     <div className="text-block">
                                         <span className="cast-text size-22">{item.original_name}</span>
                                         {item.character ? <span className="cast-text size-20">as {item.character}</span> : null}
-                                        <span className="cast-text size-18">{item.known_for_department}</span>
+                                        {/* <span className="cast-text size-18">{item.known_for_department}</span> */}
                                     </div>
                                 </div>
                             )
@@ -30,6 +29,7 @@ const CastCrew = ({ credits }) => {
                     })
                 }
             </div>
+            <Footer />
         </div>
     )
 }

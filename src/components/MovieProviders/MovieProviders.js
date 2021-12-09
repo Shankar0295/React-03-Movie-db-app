@@ -12,7 +12,7 @@ const MovieProviders = ({ watchproviders }) => {
             if (obj !== undefined) {
                 if (obj.hasOwnProperty("flatrate")) {
                     flatrate.push(obj.flatrate)
-                    console.log(flatrate, "dafadsf")
+                    console.log(flatrate)
                 }
             }
 
@@ -28,7 +28,7 @@ const MovieProviders = ({ watchproviders }) => {
             return item.map((item) => {
                 return (
                     <div key={item.provider_id}>
-                        <img style={{ height: "40px" }} src={`${IMAGE_BASE_URL}${ICON_SIZE}/${item.logo_path}`} alt="actor" />
+                        <img style={{ height: "30px" }} src={`${IMAGE_BASE_URL}${ICON_SIZE}/${item.logo_path}`} alt="actor" />
                     </div>
                 )
             })

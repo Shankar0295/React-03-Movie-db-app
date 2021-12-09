@@ -3,7 +3,6 @@ import { API_URL, API_KEY, IMAGE_BASE_URL, POSTER_SIZE, BACKDROP_SIZE } from '..
 import './MovieInfo.css'
 import { Link } from 'react-router-dom'
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import CastCrew from '../CastCrew/CastCrew';
 import MovieProviders from '../MovieProviders/MovieProviders';
 import Loading from '../Loading/Loading'
@@ -30,6 +29,7 @@ const MovieInfo = (props) => {
         getInfo()
     }, [])
 
+    console.log(movieDetails, "in movieinfor")
 
     const genres = movieDetails.map((item) => {
         return (
@@ -91,7 +91,7 @@ const MovieInfo = (props) => {
                             <img className="movieInfo-poster" src={`${IMAGE_BASE_URL}${POSTER_SIZE}/${item.poster_path}`} alt="thumbnail" />
                             <div>
                                 <div>
-                                    <h2>{item.title}({new Date(item.release_date).toLocaleDateString()})</h2>
+                                    <h2 className="h2-margin">{item.title}({new Date(item.release_date).toLocaleDateString()})</h2>
                                 </div>
                                 <div className="movieInfo-secondContainer">
                                     <p className="movieInfo-vote">
@@ -100,29 +100,29 @@ const MovieInfo = (props) => {
                                     <span className="movieInfo-genres">{minutesToHours(item.runtime)}</span>
                                 </div>
                                 <section>
-                                    <div className="movieInfo-tagline"><h3>{item.tagline}</h3></div>
+                                    <div className="movieInfo-tagline"><h3 className="h3-margin">{item.tagline}</h3></div>
                                     <div>
-                                        <h2>OVERVIEW</h2>
+                                        <h2 className="h2-margin">OVERVIEW</h2>
                                         <p className="movieInfo-overview">{item.overview}</p>
                                     </div>
                                 </section>
                                 <div className="movieInfo-details">
                                     {item.budget > 0 ? <div className="budget">
-                                        <h2>Budget</h2>
-                                        <h3>{convertMoney(item.budget)}</h3>
+                                        <h2 className="h2-margin">Budget</h2>
+                                        <h3 className="h3-margin">{convertMoney(item.budget)}</h3>
                                     </div> : null}
                                     {item.revenue > 0 ? <div className="budget">
-                                        <h2>Revenue</h2>
-                                        <h3>{convertMoney(item.revenue)}</h3>
+                                        <h2 className="h2-margin">Revenue</h2>
+                                        <h3 className="h3-margin">{convertMoney(item.revenue)}</h3>
                                     </div> : null}
                                     <div>
-                                        <h2>Streaming On</h2>
+                                        <h2 className="h2-margin">Streaming On</h2>
                                         <span><MovieProviders watchproviders={movieDetails.map((item) => { return (item["watch/providers"]) })} /></span>
                                     </div>
                                 </div>
                                 <div>
-                                    <h2>{Director().length > 1 ? 'DIRECTOR\'S' : 'DIRECTOR'}</h2>
-                                    <div>{Director().map((item, index) => {
+                                    <h2 className="h2-margin">{Director().length > 1 ? 'DIRECTOR\'S' : 'DIRECTOR'}</h2>
+                                    <div className="director-margin">{Director().map((item, index) => {
                                         return (<span style={{ fontWeight: 500 }} key={item.id}>{(index ? ', ' : '') + item.name}</span>)
                                     })}</div>
                                 </div>
@@ -133,7 +133,6 @@ const MovieInfo = (props) => {
             })}
             </div>
             <CastCrew credits={movieDetails.map((item) => { return (item["credits"]) })} />
-            <Footer />
         </div>
 
     )

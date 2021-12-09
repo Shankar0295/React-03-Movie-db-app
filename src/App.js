@@ -1,7 +1,7 @@
 import Home from './components/Home/Home';
 import MovieInfo from './components/MovieInfo/MovieInfo';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './index.css';
+import './App.css';
 
 function App() {
   return (

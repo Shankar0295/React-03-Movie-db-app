@@ -5,13 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #121010;
+  background-color: #191b1f;
+  /* background-color: #121010; */
   color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+body,
+html,
+#root {
+  height: 100%;
 }
 
 #root{
 min-height: 800px;
+display: flex;
+flex-direction: column;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

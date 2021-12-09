@@ -3,9 +3,9 @@
    margin-bottom: 20px;
 }
 
-h2{
+.h2-margin, .h3-margin{
+    margin-top: 12px;
     margin-bottom: 10px;
-    
 }
 
 
@@ -25,7 +25,7 @@ h2{
 }
 
 .movieInfo-section{
-    background: rgba(0,0,0,.8);
+    background: rgba(0,0,0,.9);
     padding: 20px 30px;
     border-radius: 20px;
     display: flex;
@@ -52,16 +52,19 @@ h2{
 .movieInfo-votePadding.green{
     background-color: green;
     font-weight: bolder;
+    border-radius: 5px;
 }
 
 .movieInfo-votePadding.orange{
     background-color: orange;
     font-weight: bolder;
+    border-radius: 5px;
 }
 
 .movieInfo-votePadding.red{
     background-color: red;
     font-weight: bolder;
+    border-radius: 5px;
 }
 .movieInfo-tagline{
     font-style: italic;
@@ -69,6 +72,8 @@ h2{
 .movieInfo-overview{
     text-align: justify;
     font-weight: 500;
+    margin-top: 12px;
+    margin-bottom: 10px; 
 
 }
 .movieInfo-homebtn{
@@ -88,5 +93,9 @@ h2{
 
 .budget{
     margin-right: 15px;
+}
+
+.director-margin{
+    margin-bottom: 12px;
 }
 

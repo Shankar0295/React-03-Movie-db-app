@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = ({ movieDetails, searchTerm }) => {
     console.log(searchTerm, "searchTerm")
-    const setVoteClass = (vote) => {
-        if (vote >= 8) {
-            return "green"
-        } else if (vote >= 6) {
-            return "orange"
-        } else {
-            return "red"
-        }
-    }
+    // const setVoteClass = (vote) => {
+    //     if (vote >= 8) {
+    //         return "green"
+    //     } else if (vote >= 6) {
+    //         return "orange"
+    //     } else {
+    //         return "red"
+    //     }
+    // }
     console.log(movieDetails, "details")
     return (
         <div className="movieCard-wrapper">
@@ -23,10 +23,10 @@ const MovieCard = ({ movieDetails, searchTerm }) => {
                     <div className="moviePosterWrapper" key={i}>
                         <Link to={`${items.id}`} className="movieLink">
                             <img className="moviePoster" src={`${IMAGE_BASE_URL}${POSTER_SIZE}/${items.poster_path}`} alt="thumbnail" />
-                            <div className="wrapper-text">
+                            {/* <div className="wrapper-text">
                                 <p className="card-text">{items.title}</p>
                                 <p className={`card-text ${setVoteClass(items.vote_average)}`}>{items.vote_average}</p>
-                            </div>
+                            </div> */}
                         </Link>
                     </div>
                 )

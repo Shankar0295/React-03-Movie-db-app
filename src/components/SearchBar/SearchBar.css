@@ -4,13 +4,16 @@
 }
 
 .search-input{
-    width: 50%;
+    background-color: inherit;
+    width: 100%;
     border: 1px solid #ccc;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 50px;
     padding: 10px;
     font-weight: bold;
     font-size: 20px;
+    caret-color: #fff;
+    color: #fff
 }
 
 ::placeholder {
@@ -20,3 +23,5 @@
   input:focus{
       outline: none;
   }
+
+  
