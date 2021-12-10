@@ -17,8 +17,6 @@ height: 90%;
 transition: transform .2s;
 border-radius: 10px;
 
-/* max-width: 100%;
-    max-height: 100%; */
 }
 .moviePoster:hover{
     transform: scale(1.1);
@@ -26,14 +24,11 @@ border-radius: 10px;
 
 .moviePosterWrapper{
     text-align: center;
-    /* border: 1px solid #000000;
-    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
-    background-color : #ffffff; */
 }
 .cardName{
     font-size: 32px;
     font-weight: 400;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
 }
 

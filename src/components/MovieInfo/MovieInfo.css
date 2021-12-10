@@ -1,6 +1,9 @@
 .movieInfo-container{
    display: flex;
    margin-bottom: 20px;
+   width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .h2-margin, .h3-margin{
@@ -13,12 +16,7 @@
 }
 
 .movieInfo-backdrop{
-    background-size: cover!important;
-    /* width: 100%; */
     height: auto;
-    padding: 30px 40px;
-    background-position: 50%!important;
-
 }
 
 .movieInfo-poster{

@@ -4,7 +4,6 @@ import Header from '../Header/Header';
 import MovieCard from '../MovieCard/MovieCard';
 import LoadMoreButton from '../LoadMoreButton/LoadMoreButton'
 import Loading from '../Loading/Loading'
-import SearchBar from '../SearchBar/SearchBar';
 
 const MOVIEAPI = `${API_URL}movie/top_rated?api_key=${API_KEY}&language=en-US&page=`
 const SEARCHAPI = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=`
@@ -61,8 +60,7 @@ const Home = () => {
 
     return (
         <div>
-            <Header />
-            <SearchBar onChange={searchMovie} value={searchTerm} />
+            <Header onChange={searchMovie} value={searchTerm} />
             <MovieCard movieDetails={movie} searchTerm={searchTerm} />
             {count < totalPage && !loading ? <LoadMoreButton onClick={loadMore} /> : null}
 

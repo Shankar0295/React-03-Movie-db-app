@@ -24,3 +24,7 @@
     color: #ffffff;
     text-decoration: none;
 }
+
+.search-container{
+    display: flex;
+}

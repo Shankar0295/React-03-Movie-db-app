@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { API_URL, API_KEY, IMAGE_BASE_URL, POSTER_SIZE, BACKDROP_SIZE } from '../../config';
+import { API_URL, API_KEY, IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 import './MovieInfo.css'
 import { Link } from 'react-router-dom'
 import Header from '../Header/Header';
